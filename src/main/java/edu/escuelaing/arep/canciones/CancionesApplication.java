@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 public class CancionesApplication {
 	
+	
 	@Bean
     @LoadBalanced
     public RestTemplate getRestTemplate() {
@@ -21,6 +22,7 @@ public class CancionesApplication {
         return new RestTemplate(httpRequestFactory);
     }
 
+	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CancionesApplication.class, args);
