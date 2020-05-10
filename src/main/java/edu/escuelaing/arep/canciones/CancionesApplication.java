@@ -19,7 +19,7 @@ public class CancionesApplication {
     public RestTemplate getRestTemplate() {
         HttpComponentsClientHttpRequestFactory httpRequestFactory 
                 = new HttpComponentsClientHttpRequestFactory();
-        httpRequestFactory.setConnectTimeout(3000);
+        httpRequestFactory.setConnectTimeout(10000);
         return new RestTemplate(httpRequestFactory);
     }
 
