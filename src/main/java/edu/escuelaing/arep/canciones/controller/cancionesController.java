@@ -1,6 +1,7 @@
 package edu.escuelaing.arep.canciones.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +19,9 @@ public class cancionesController {
 	cancionesServices cancionServ;
 	
 	@RequestMapping(method = RequestMethod.GET, path="/{id}")
-	public ResponseEntity<Cancion> getcancion(@PathVariable("id") int id){
+	public ResponseEntity<?> getcancion(@PathVariable("id") int id){
 		Cancion canc = cancionServ.getCancion(id);
-		return ResponseEntity.ok(canc);
+		return new ResponseEntity<>(canc,HttpStatus.ACCEPTED);
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
