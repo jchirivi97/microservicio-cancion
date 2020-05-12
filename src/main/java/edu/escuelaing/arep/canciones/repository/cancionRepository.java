@@ -38,7 +38,7 @@ public class cancionRepository {
 			c.close();
 			if (rs.next()) {
 				System.out.println("reproduccion: ");
-				can = new Cancion(rs.getInt("id"), rs.getString("nombre"),rs.getString("contenido"));
+				can = new Cancion(rs.getInt("id"), rs.getString("contenido"),rs.getString("nombre"));
 			}
 			pstmt.close();
 			rs.close();
